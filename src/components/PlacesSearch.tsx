@@ -14,6 +14,7 @@ import {
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
+import { GOOGLE_MAPS_API_KEY } from '@env';
 
 interface PlacePrediction {
   placePrediction: {
@@ -52,10 +53,10 @@ interface Place {
 
 interface PlacesSearchProps {
   onPlaceSelect: (place: Place) => void;
-  apiKey: string;
+
 }
 
-const PlacesSearch: React.FC<PlacesSearchProps> = ({ onPlaceSelect, apiKey }) => {
+const PlacesSearch: React.FC<PlacesSearchProps> = ({ onPlaceSelect }) => {
   const [searchText, setSearchText] = useState('');
   const [predictions, setPredictions] = useState<Place[]>([]);
   const [loading, setLoading] = useState(false);
@@ -124,7 +125,7 @@ const PlacesSearch: React.FC<PlacesSearchProps> = ({ onPlaceSelect, apiKey }) =>
           {
             headers: {
               'Content-Type': 'application/json',
-              'X-Goog-Api-Key': apiKey,
+              'X-Goog-Api-Key': GOOGLE_MAPS_API_KEY,
               'X-Goog-FieldMask': 'suggestions.placePrediction.placeId,suggestions.placePrediction.structuredFormat'
             }
           }
@@ -154,7 +155,7 @@ const PlacesSearch: React.FC<PlacesSearchProps> = ({ onPlaceSelect, apiKey }) =>
 
     const debounceTimer = setTimeout(fetchPredictions, 300);
     return () => clearTimeout(debounceTimer);
-  }, [searchText, apiKey, userLocation]);
+  }, [searchText, userLocation]);
 
   const saveToRecentSearches = async (place: Place) => {
     try {

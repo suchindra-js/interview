@@ -4,10 +4,8 @@ import MapView, { Marker, Region } from 'react-native-maps';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import PlacesSearch from '../components/PlacesSearch';
-
 import * as Location from 'expo-location';
-
-const GOOGLE_MAPS_API_KEY = 'AIzaSyDaqiWUb_LKlrX9t51yyZZWj5oLablru3U'; // Replace with your actual API key
+import { GOOGLE_MAPS_API_KEY } from '@env';
 
 interface Place {
   place_id: string;
@@ -142,16 +140,9 @@ const MapScreen: React.FC = () => {
       <View style={styles.searchContainer}>
         <PlacesSearch
           onPlaceSelect={handlePlaceSelect}
-          apiKey={GOOGLE_MAPS_API_KEY}
         />
       </View>
 
-      {/* <View style={styles.historyContainer}>
-        <SearchHistory
-          history={searchHistory}
-          onPlaceSelect={handlePlaceSelect}
-        />
-      </View> */}
     </View>
   );
 };
