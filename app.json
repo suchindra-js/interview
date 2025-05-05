@@ -13,14 +13,24 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.interview",
+      "config": {
+        "googleMapsApiKey": "AIzaSyDaqiWUb_LKlrX9t51yyZZWj5oLablru3U"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.yourcompany.interview",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyDaqiWUb_LKlrX9t51yyZZWj5oLablru3U"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
