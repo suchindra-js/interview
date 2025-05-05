@@ -19,7 +19,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.yourcompany.interview",
       "config": {
-        "googleMapsApiKey": "AIzaSyDaqiWUb_LKlrX9t51yyZZWj5oLablru3U"
+        "googleMapsApiKey": "${GOOGLE_MAPS_API_KEY}"
       }
     },
     "android": {
@@ -31,7 +31,7 @@
       "package": "com.yourcompany.interview",
       "config": {
         "googleMaps": {
-          "apiKey": "AIzaSyDaqiWUb_LKlrX9t51yyZZWj5oLablru3U"
+          "apiKey": "${GOOGLE_MAPS_API_KEY}"
         }
       }
     },

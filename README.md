@@ -40,23 +40,7 @@ cp .env.example .env
 GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
 ```
 
-5. Update the API key in `app.json` for both iOS and Android:
-```json
-{
-  "ios": {
-    "config": {
-      "googleMapsApiKey": "your_google_maps_api_key_here"
-    }
-  },
-  "android": {
-    "config": {
-      "googleMaps": {
-        "apiKey": "your_google_maps_api_key_here"
-      }
-    }
-  }
-}
-```
+The API key will be automatically used in both the app configuration and the Places API calls.
 
 ## Running the App
 
